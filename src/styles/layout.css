@@ -12,11 +12,11 @@ body {
 h1 {
     font-family: "Montserrat", sans-serif;
     color: #C7FFB9;
-    font-size: 8rem;
+    font-size: 10rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.16em;
-    margin-top: 90px;
+    margin-top: 140px;
     margin-bottom: 90px;
     text-align: center;
 }
