@@ -8,3 +8,45 @@ body {
     background: linear-gradient(to bottom, #FFF3ED, #E9260D, #9A1512);
     height: 100vh;
 }
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: #C7FFB9;
+    font-size: 8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    text-align: center;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+

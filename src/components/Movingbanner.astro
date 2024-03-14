@@ -1,0 +1,47 @@
+---
+
+---
+
+
+<div class="text-wrapper">
+    <p class="text-banner">TECHNO</p>
+    <p class="text-banner">DISCO</p>
+    <p class="text-banner">HOUSE</p>
+    <p class="text-banner">TECHNO</p>
+    <p class="text-banner">DISCO</p>
+    <p class="text-banner">HOUSE</p>
+    <p class="text-banner">TECHNO</p>
+    <p class="text-banner">DISCO</p>
+    <p class="text-banner">HOUSE</p>
+    <p class="text-banner">TECHNO</p>
+    <p class="text-banner">DISCO</p>
+    <p class="text-banner">HOUSE</p>
+</div>
+
+<style>
+    .text-wrapper {
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
+
+    .text-banner {
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: #C7FFB9;
+        /* -webkit-text-stroke-width: 0.8px; */
+        white-space: nowrap;
+        padding: 0 1rem;
+        letter-spacing: 1px;
+        animation: move-rtl 10s linear infinite;
+    }
+
+    @keyframes move-rtl {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
