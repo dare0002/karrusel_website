@@ -1,5 +1,7 @@
 ---
+import "../styles/layout.css";
 
+import Nav from "../components/Nav.astro";
 ---
 
 <html lang="en">
@@ -13,20 +15,25 @@
 	<body>
 		<h1>About</h1>
 
-        <h2>Festival Experience</h2>
+        <div class="about_1">
+                    <h2>Festival Experience</h2>
 
         <p>Karrusel believes in the right to a harassment-free festival experience. We believe in the right of everyone to express themselves. Karrusel welcomes everybody
          all with their different orientations, experiences, histories and backgrounds. Karrusel only exists if everyone takes care of each other, respects their own and others boundaries, embraces diversity and acts as a part of the community.
 
 </p>
+        </div>
 
-<p>Take responsibility for your own actions
+<div class="about_respect">
+    <p>Take responsibility for your own actions
     Respect your own and others boundaries
     Speak up rather than look the other way</p>
+</div>
 
-    <img>
+    <img src="public/img/about.png">
 
-    <h2>About</h2>
+    <div class="about_2">
+         <h2>About</h2>
 
     <p>2024 marks the 5th edition of Karrusel. Karrusel is a circus themed rave  presenting some of the world's leading electronic artists. 
 
@@ -35,11 +42,18 @@ Past  editions include performances by Acid Pauli, Amelie Lens, Dixon, FJAAK,
    Richie Hawtin, Skin On Skin, The Blessed Madonna, Victor Ruiz and  VTSS.
     The festival is open air and takes place on secluded green spot at  the abandoned
      shipyard of Refshaleøen in central Copenhagen.</p>
-
-     <h2>Thanks</h2>
+    </div>
+   
+<div class="about_3">
+  <h2>Thanks</h2>
 
      <p>Special thanks to each and every volunteer, Heineken Silver for supporting new
          and wild ideas and Refshaleøen for meeting our housing needs..</p>
+</div>
+  
 
 	</body>
 </html>
+<style>
+
+</style>
