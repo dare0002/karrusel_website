@@ -2,6 +2,8 @@
 import "../styles/layout.css";
 
 import Nav from "../components/Nav.astro";
+
+import Signup from "../components/Signup.astro"; 
 ---
 
 <html lang="en">
@@ -13,28 +15,47 @@ import Nav from "../components/Nav.astro";
 		<title>Astro</title>
 	</head>
 	<body>
+        <Nav/> 
 		<h1>Acid Pauli</h1>
 
         <div class="grid_singleview">
-            <div>
-            <img src="img/acid_pauli.webp" alt="acid pauli">
+            <div class="column-1">
+                <img src="img/acid_pauli.webp" alt="acid pauli">
             </div>
-            <div><h3>About Acid Pauli</h3>
+            <div class="column-2">
+                <h3>About Acid Pauli</h3>
             <p>Over the last 20 years Martin Gretschmann has been exploring new fields of music off the mainstream paths: psychedelic, adventurous and full of musicality.
                 Acid Pauli is Martin Gretschmann's club-oriented live set. It has morphed over the years into an advanced DJ performance, incorporating not only techno and house but a wide variety of music across genres beyond dance music. As a versatile musician, Martin is equally comfortable performing at Techno Clubs in New York or Ibiza as he is producing radio plays and writing film music.
             </p>
             </div>
         </div>
+<Signup/>
+	</body>
 
-        <style>
+    
+</html>
+
+<style>
         
         .grid_singleview {
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
+
+        img {
+            max-width: 80%;
+            margin-left: 5rem;
+        }
+
+        .column-2 {
+            margin-right:5rem ;
+        }
+
+        h3 {
+            margin-bottom: 2rem;
+        }
+
+        p {
+            line-height: 2;
+        }
     </style>
-
-	</body>
-
-    
-</html>
