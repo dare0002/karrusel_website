@@ -5,8 +5,14 @@
 }
 
 body {
+<<<<<<< HEAD
   background: linear-gradient(to bottom, #fff3ed, #e9260d, #9a1512);
   height: 100vh;
+=======
+    background: linear-gradient(to bottom, #FFF3ED 0%, #E9260D 50%, #9A1512) 100%;
+    background-attachment: fixed;
+    height: 100vh;
+>>>>>>> 0e2ae7a0e1f21a106a626e9bce49914bdf964c2e
 }
 
 <<<<<<< HEAD

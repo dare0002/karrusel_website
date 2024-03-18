@@ -1,0 +1,127 @@
+---
+
+---
+
+<ul class="lineup">
+    <li>Artist 1</li> 
+    <li>Artist 2</li>
+    <li>Artist 3</li>
+    <li>Artist 4</li>
+    <li>Artist 5</li>
+    <li>Artist 6</li>
+    <li>Artist 7</li>
+    <li>Artist 8</li>
+    <li>Artist 9</li>
+    <li>Artist 10</li>
+    <li>Artist 11</li>
+    <li>Artist 12</li> <br><br><br><br><br>
+</ul>
+
+<ul class="lineup eight-rows">
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon> Artist 1</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 2</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 3</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 4</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 5</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 6</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 7</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 8</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 9</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 10</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 11</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 12</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 13</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 14</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 15</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 16</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 17</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 18</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 19</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 20</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 21</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 22</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 23</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 24</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 25</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 26</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 27</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 28</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 29</li>
+    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 30</li>
+</ul>
+
+
+<style>
+
+/* Line-up store navn */
+
+.lineup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 60px;
+}
+
+.lineup li {
+    flex: 1 0 33.33%; /* För 3 kolumner per rad */
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* 4 artister på andra raden */
+.lineup li:nth-child(4),
+.lineup li:nth-child(5),
+.lineup li:nth-child(6),
+.lineup li:nth-child(7) {
+    flex: 1 0 25%;
+}
+
+/* 3 artister på näst sista raden */
+.lineup li:nth-last-child(4),
+.lineup li:nth-last-child(3),
+.lineup li:nth-last-child(2) {
+    flex: 1 0 33.33%;
+}
+
+/* 2 artister på sista raden */
+.lineup li:nth-last-child(1),
+.lineup li:nth-last-child(2) {
+    flex: 1 0 50%;
+}
+
+
+/* Line-up små navn */
+
+.eight-rows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 300px;
+}
+
+.eight-rows li {
+    flex: 1 0 25%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.eight-rows li:nth-child(-n+28) {
+    flex: 1 0 25%;
+}
+
+.eight-rows li:nth-last-child(-n+2) {
+    flex: 1 0 50%;
+}
+
+
+</style>
+
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
