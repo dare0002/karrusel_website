@@ -1,0 +1,64 @@
+---
+import "../styles/layout.css";
+
+import Nav from "../components/Nav.astro";
+
+import Footer from "../components/Footer.astro";
+
+import Signup from "../components/Signup.astro"; 
+
+import Movingbanner from "../components/Movingbanner.astro";
+
+
+
+---
+
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+        <Nav/> 
+		<h1 class="header">Map</h1>
+         <Movingbanner/>
+        		
+
+<img class="img" src="public/img/map.webp" width="40%">
+   
+  <Movingbanner/>
+
+  <h2>Download map</h2>
+  <img class="load" src="public/img/download.webp" width="4%">
+
+<Signup/>
+	</body>
+    		<Footer/>
+</html>
+<style>
+
+img{
+    margin-left:29%;
+}
+
+.load{
+    margin-left:47%;
+    margin-top:4%;
+}
+@media screen and (max-width: 900px){
+    .header{
+        font-size: 4.5rem;
+    }
+    img {
+  width: 100%;
+  height: auto;
+  display: block;
+  
+}
+
+}
+<style/>
