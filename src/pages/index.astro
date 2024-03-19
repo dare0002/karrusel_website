@@ -1,17 +1,31 @@
 ---
 import "../styles/layout.css";
-
 import Nav from "../components/Nav.astro";
-
 import Movingbanner from "../components/Movingbanner.astro";
-
 import Banner from "../components/Banner.astro";
-
 import Footer from "../components/Footer.astro";
-
 import Pinkbanner from "../components/Pinkbanner.astro"; 
-
 import Lineup from "../components/Lineup.astro";
+
+//API keys
+//Project URL: https://rbqphrbsgztcnskkjdkq.supabase.co 
+//Project API keys: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U
+
+const data = await fetch ("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line-up", {
+	method:"GET", 
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U"
+	}
+}).then(res=>res.json());
+
+console.log(data);
+
+
+
+
+
+
+
 
 ---
 
@@ -78,7 +92,13 @@ import Lineup from "../components/Lineup.astro";
 			<div class="lineup">
 				<h2>Line-up 2024</h2> <br><br><br><br>
 				<p>...3 DAYS OF HOUSE, DISCO & TECHNO IN THE WOODS</p> <br><br><br><br><br><br>
-				<Lineup/>
+				
+				{data.map(show=>{
+					return <Lineup data={show}/>;
+				})}
+
+
+				
 				<Movingbanner/>
 			</div>
 		</main>

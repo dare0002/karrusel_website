@@ -1,10 +1,11 @@
 ---
-
+const {data} = Astro.props; 
+console.log(data);
 ---
 
 <ul class="lineup">
-    <li>Artist 1</li> 
-    <li>Artist 2</li>
+    <li>{data.name}</li> 
+    <li>{data.name}</li>
     <li>Artist 3</li>
     <li>Artist 4</li>
     <li>Artist 5</li>
