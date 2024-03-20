@@ -20,6 +20,7 @@ import Signup from "../components/Signup.astro";
 </head>
 
 <body>
+     <Nav/> 
     <h1>Artists 2023</h1>
 
     <div class="grid_artist">
@@ -53,7 +54,31 @@ import Signup from "../components/Signup.astro";
             <a href="koelsh.html">About</a>
         </div>
 
+              <div class="artist_card">
+            <img src="img/mira-artist-card.webp" alt="Mira">
+            <h2>Mira</h2>
+            <a href="mira.html">About</a>
+        </div>
+
+                   <div class="artist_card">
+            <img src="img/satori-artist-card.webp" alt="Satori">
+            <h2>Satori</h2>
+            <a href="Satori.html">About</a>
+        </div>
+                   <div class="artist_card">
+            <img src="img/skin-on-skin-artist-card.webp" alt="Skin on skin">
+            <h2>Skin on skin</h2>
+            <a href="skin-on-skin.html">About</a>
+        </div>
+
+                         <div class="artist_card">
+            <img src="img/VTSS-artist-card.webp" alt="VTSS">
+            <h2>VTSS</h2>
+            <a href="VTSS.html">About</a>
+        </div>
+
     </div>
+    <Signup/>
     </body>
     		<Footer/>
 </html>
@@ -68,9 +93,27 @@ import Signup from "../components/Signup.astro";
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
   margin-right: 50px;
-  margin-left: 50px;
+  margin-left: 120px;
   background-color: #fff;
+  width: 60%;
+
 }
+
+img{
+    width: 100%;
+}
+
+.artist_card a{
+         font-family: "Montserrat", sans-serif;
+  color: #430708;
+    font-size: 1.7rem;
+  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+ margin-left: 33%;
+}
+
 </style>
