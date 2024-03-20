@@ -5,13 +5,71 @@ import Nav from "../components/Nav.astro";
 
 import Signup from "../components/Signup.astro"; 
 import Footer from "../components/Footer.astro"
+
+
+// const data = await fetch ("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line-up", {
+// 	method:"GET", 
+// 	headers: {
+// 		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U"
+// 	}
+// }).then(res=>res.json());
+
+
+
+
+
+
+
+
+
+// Fetcher vores data fra API
+const data = await fetch ("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line-up", {
+	method:"GET", 
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U"
+	}
+}).then(res=>res.json())
+.then(showArtists);
+
+ function showArtists (data) {
+    console.log(data);
+    data.forEach(element=> {
+        const link = document.createElement ("a");
+        link.href=
+
+    });
+ }
+
+
+
+
+
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="robots" content="noindex,nofollow" />
+		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
@@ -60,25 +118,4 @@ import Footer from "../components/Footer.astro"
         p {
             line-height: 2;
         }
-
-       @media screen and (max-width: 900px){
-        .grid_singleview {
-            display: grid;
-            grid-template-columns: 1fr;
-        }
-        h1 {
-            font-size: 4.5rem;
-        }
-
-       
-      
-
-       p {
-        margin-left: 5rem;
-        
-       }
-
-
-       }
-
     </style>
