@@ -7,7 +7,6 @@ import Footer from "../components/Footer.astro";
 
 import Signup from "../components/Signup.astro"; 
 
-import Card from "../components/Card.astro"
 
 ---
 
@@ -80,6 +79,11 @@ import Card from "../components/Card.astro"
         </div>
 
     </div>
+
+    
+
+</section>
+
     <Signup/>
     </body>
     		<Footer/>
@@ -120,36 +124,3 @@ img{
 
 </style>
 
-<script>
-        // JavaScript som reagerer på klik og fetcher data
-        document.querySelectorAll('.artist_card').forEach(card => {
-            card.addEventListener('click', function() {
-                const artistName = this.dataset.artist; // Få artist navn
-                fetchArtistData(artistName);
-            });
-        });
-
-        function fetchArtistData(artistName) {
-            // fetch data ved brug af artist navn
-            // Replace 'YOUR_API_KEY' and 'YOUR_PROJECT_ID' with your Supabase API key and project ID
-            fetch(`https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/artists?artist_name=eq.${artistName}`, {
-                method: 'GET',
-                headers: {
-                    'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U',
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Render the single view for the artist using the fetched data
-                renderArtistSingleView(data);
-            })
-            .catch(error => console.error('Error fetching artist data:', error));
-        }
-
-        function renderArtistSingleView(artistData) {
-            // Write code to render the single view for the artist using the fetched data
-            // For example, you can create a modal or a separate page and display the data there
-            console.log(artistData);
-        }
-    </script>
