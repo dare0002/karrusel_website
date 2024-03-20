@@ -10,11 +10,7 @@ const data = await fetch ("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line
 }).then(res=>res.json());
 
 const headline = data.filter((show) => show.hovednavn)
-
 const other = data.filter((show) => !show.hovednavn)
-
-
-// console.log(data);
 
 console.log("headline", headline)
 
