@@ -11,6 +11,8 @@ import Lineup from "../components/Lineup.astro";
 //Project URL: https://rbqphrbsgztcnskkjdkq.supabase.co 
 //Project API keys: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U
 
+
+//Fetcher vores data fra API
 const data = await fetch ("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line-up", {
 	method:"GET", 
 	headers: {
@@ -92,13 +94,13 @@ console.log(data);
 			<div class="lineup">
 				<h2>Line-up 2024</h2> <br><br><br><br>
 				<p>...3 DAYS OF HOUSE, DISCO & TECHNO IN THE WOODS</p> <br><br><br><br><br><br>
-				
+
+				<Lineup/>
+<!-- 
 				{data.map(show=>{
 					return <Lineup data={show}/>;
-				})}
+				})} -->
 
-
-				
 				<Movingbanner/>
 			</div>
 		</main>
