@@ -3,6 +3,25 @@ const {data} = Astro.props;
 console.log(data);
 ---
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a href={`shows/${data.slug}`}>
 <ul class="lineup">
     <li>{data.name}</li> 
     <li>{data.name}</li>
@@ -17,6 +36,7 @@ console.log(data);
     <li>Artist 11</li>
     <li>Artist 12</li> <br><br><br><br><br>
 </ul>
+</a>
 
 <ul class="lineup eight-rows">
     <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon> Artist 1</li>
