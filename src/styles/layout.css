@@ -1,61 +1,68 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    background: linear-gradient(to bottom, #FFF3ED 0%, #E9260D 50%, #9A1512) 100%;
-    background-attachment: fixed;
-    height: 100vh;
+  background: linear-gradient(to bottom, #fff3ed 0%, #e9260d 50%, #9a1512) 100%;
+  background-attachment: fixed;
+  height: 100vh;
 }
 .herotext h1 {
-    font-family: "Montserrat", sans-serif;
-    color: #C7FFB9;
-    font-size: 10rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin-top: 140px;
-    margin-bottom: 90px;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #c7ffb9;
+  font-size: 10rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 140px;
+  margin-bottom: 90px;
+  text-align: center;
 }
 
 h1 {
-    font-family: "Montserrat", sans-serif;
-    color: #430708;
-    font-size: 8rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin-top: 140px;
-    margin-bottom: 90px;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #430708;
+  font-size: 8rem;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+
+  margin-top: 140px;
+  margin-bottom: 90px;
+  text-align: center;
 }
 h2 {
-    font-family: "Montserrat", sans-serif;
-    color: #430708;
-    font-size: 2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #430708;
+  font-size: 2rem;
+  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  text-align: center;
 }
 h3 {
-    font-family: "Montserrat", sans-serif;
-    color: #430708;
-    font-size: 1.7rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: #430708;
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  text-align: center;
 }
 p {
-    font-family: "Montserrat", sans-serif;
-    color: #430708;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
+  font-family: "Montserrat", sans-serif;
+  color: #430708;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 1px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.16em;
+}
+
+.about_respect {
+  color: #5f1400;
 }

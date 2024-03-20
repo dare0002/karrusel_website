@@ -1,59 +1,45 @@
 ---
+// const {data} = Astro.props; 
+// console.log(data);
+
+const data = await fetch ("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line-up", {
+	method:"GET", 
+	headers: {
+		apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U"
+	}
+}).then(res=>res.json());
+
+const headline = data.filter((show) => show.hovednavn)
+
+const other = data.filter((show) => !show.hovednavn)
+
+
+// console.log(data);
+
+console.log("headline", headline)
 
 ---
 
+<a href={`shows/${data.slug}`}>
 <ul class="lineup">
-    <li>Artist 1</li> 
-    <li>Artist 2</li>
-    <li>Artist 3</li>
-    <li>Artist 4</li>
-    <li>Artist 5</li>
-    <li>Artist 6</li>
-    <li>Artist 7</li>
-    <li>Artist 8</li>
-    <li>Artist 9</li>
-    <li>Artist 10</li>
-    <li>Artist 11</li>
-    <li>Artist 12</li> <br><br><br><br><br>
+    {headline.map(show=>{
+					return <li>{show.name}</li>;
+				})}
 </ul>
+</a>
 
 <ul class="lineup eight-rows">
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon> Artist 1</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 2</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 3</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 4</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 5</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 6</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 7</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 8</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 9</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 10</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 11</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #FA5A2C;"></iconify-icon>Artist 12</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 13</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 14</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 15</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 16</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 17</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 18</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 19</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 20</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 21</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 22</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 23</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #E9260D;"></iconify-icon>Artist 24</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 25</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 26</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 27</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 28</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 29</li>
-    <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>Artist 30</li>
+    {other.map(show=>{
+        return <li><iconify-icon icon="material-symbols:lens" style="color: #9A1512;"></iconify-icon>{show.name} </li>})}
 </ul>
 
 
 <style>
 
 /* Line-up store navn */
+
+
+/* Farver - lave 3 klasser der kalder på child elementen */
 
 .lineup {
     display: flex;
