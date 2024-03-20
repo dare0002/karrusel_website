@@ -11,7 +11,7 @@ import Footer from "../components/Footer.astro"
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="robots" content="noindex,nofollow" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
@@ -60,4 +60,25 @@ import Footer from "../components/Footer.astro"
         p {
             line-height: 2;
         }
+
+       @media screen and (max-width: 900px){
+        .grid_singleview {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        h1 {
+            font-size: 4.5rem;
+        }
+
+       
+      
+
+       p {
+        margin-left: 5rem;
+        
+       }
+
+
+       }
+
     </style>
