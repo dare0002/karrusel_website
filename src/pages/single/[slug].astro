@@ -3,12 +3,14 @@ import "../styles/layout.css";
 import Nav from "../../components/Nav.astro";
 
 export async function getStaticPaths() {
-  const data = await fetch("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Artist", {
+  const data = await fetch("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Line-up", {
     method: "GET",
     headers: {
       apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U",
     },
   }).then((response) => response.json());
+
+  console.log(data);
 
   return data.map((artists) => {
     return {
@@ -19,7 +21,7 @@ export async function getStaticPaths() {
 }
 
 const { myData } = Astro.props;
-console.log(myData);
+// console.log(myData);
 ---
 
 <!doctype html>
