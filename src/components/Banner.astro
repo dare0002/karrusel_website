@@ -84,6 +84,71 @@
 
 
 
-  
+
+    /* Tablet */
+
+    @media screen and (max-width: 1080px) {
+
+    .banner {
+        height: 30vh;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .days-text,
+    .rave-text {
+        text-align: center;
+        margin-right: 0;
+    }
+
+    .countdown {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .countdown-box {
+        width: 100px; 
+        height: 150px; 
+        margin-right: 5px; 
+    }
+
+    .countdown-box p {
+        font-size: 6rem;
+    }
+}
+
+/* Mobil */
+
+
+    @media screen and (max-width: 800px) {
+    .container, .banner {
+        height: 20vh;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .days-text,
+    .rave-text {
+        margin-right: 0;
+        font-size: 4rem; 
+    }
+
+    .countdown {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    .countdown-box {
+        width: 80px; 
+        height: 100px; 
+        margin: 5px; 
+    }
+
+    .countdown-box p {
+        font-size: 4rem; 
+    }
+}
 
 </style>
