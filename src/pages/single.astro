@@ -5,122 +5,52 @@ import Nav from "../components/Nav.astro";
 
 import Footer from "../components/Footer.astro";
 
-import Signup from "../components/Signup.astro"; 
+import Signup from "../components/Signup.astro";
 
+import Card from "../components/Card.astro";
 
+const data = await fetch("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Artists", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U",
+  },
+}).then((res) => res.json());
+
+console.log("Data", data);
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Artists</title>
-</head>
+  </head>
 
-<body>
-     <Nav/> 
-    <h1>Artists 2023</h1>
+  <body>
+    <Nav />
+    <h1>Artists</h1>
+    <main class="grid_artist">
+      {
+        data.map((artist) => {
+          return <Card data={artist} />;
+        })
+      }
+    </main>
 
-    <div class="grid_artist">
-        <div class="artist_card">
-            <img src="img/acid-pauli-artist-card.webp" alt="Acid Pauli">
-            <h2>Acid Pauli</h2>
-            <a href="acid_pauli.html">About</a>
-        </div>
-
-        <div class="artist_card">
-            <img src="img/ame-artist-card.webp" alt="Ame">
-            <h2>Amé</h2>
-            <a href="ame.html">About</a>
-        </div>
-
-        <div class="artist_card">
-            <img src="img/fjaak-artist-card.webp" alt="Fjaak">
-            <h2>Fjaak</h2>
-            <a href="fjaak.html">About</a>
-        </div>
-
-        <div class="artist_card">
-            <img src="img/haai-artist-card.webp" alt="Haai">
-            <h2>HAAI</h2>
-            <a href="haai.html">About</a>
-        </div>
-
-        <div class="artist_card">
-            <img src="img/kolsch-artist-card.webp" alt="Kölsch">
-            <h2>Kölsch</h2>
-            <a href="koelsh.html">About</a>
-        </div>
-
-              <div class="artist_card">
-            <img src="img/mira-artist-card.webp" alt="Mira">
-            <h2>Mira</h2>
-            <a href="mira.html">About</a>
-        </div>
-
-                   <div class="artist_card">
-            <img src="img/satori-artist-card.webp" alt="Satori">
-            <h2>Satori</h2>
-            <a href="Satori.html">About</a>
-        </div>
-                   <div class="artist_card">
-            <img src="img/skin-on-skin-artist-card.webp" alt="Skin on skin">
-            <h2>Skin on skin</h2>
-            <a href="skin-on-skin.html">About</a>
-        </div>
-
-                         <div class="artist_card">
-            <img src="img/VTSS-artist-card.webp" alt="VTSS">
-            <h2>VTSS</h2>
-            <a href="VTSS.html">About</a>
-        </div>
-
-    </div>
-
-    
-
-</section>
-
-    <Signup/>
-    </body>
-    		<Footer/>
+    <Signup />
+  </body>
+  <Footer />
 </html>
 
 <style>
-    .grid_artist {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.artist_card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 20px;
-  margin-right: 50px;
-  margin-left: 165px;
-  background-color: #fff;
-  width: 60%;
-
-}
-
-img{
+  img {
     width: 100%;
-}
-
-.artist_card a{
-         font-family: "Montserrat", sans-serif;
-  color: #430708;
-    font-size: 1.7rem;
-  font-weight: 600;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
- margin-left: 33%;
-}
-
+  }
+  .grid_artist {
+    display: grid;
+    width: 80%;
+    grid-template-columns: 1fr 1fr;
+  }
 </style>
-

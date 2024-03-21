@@ -1,0 +1,24 @@
+---
+import "../styles/layout.css";
+
+export async function getStaticPaths() {
+  const data = await fetch("https://rbqphrbsgztcnskkjdkq.supabase.co/rest/v1/Artist", {
+    method: "GET",
+    headers: {
+      apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJicXBocmJzZ3p0Y25za2tqZGtxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0OTM3NDcsImV4cCI6MjAyNjA2OTc0N30.GvR57uaKjzJt0jYC8QSdbKLWggMzwDIWHMRbaqtjL2U",
+    },
+  }).then((response) => response.json());
+
+  return data.map((artists) => {
+    return {
+      params: { slug: artists.slug },
+      props: { myData: artists },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<html></html>

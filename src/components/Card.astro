@@ -1,63 +1,38 @@
 ---
-import Nav from "../components/Nav.astro";
+const { data } = Astro.props;
+
+console.log(data);
 ---
 
-<!DOCTYPE html>
-<html lang="da">
+<article class="artist_card">
+  <img src={`/img/${data.image}`} alt={`Image of ${data.name}`} />
+  <h2>{data.name}</h2>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Acid Pauli</title>
-</head>
-
-<body>
-<Nav>
-    <div class="artist_details">
-        <img src="img/acid-pauli-artist-card.webp" alt="Acid Pauli">
-        <h2>About Acid Pauli</h2>
-        <p>Martin Gretschmann, aka Acid Pauli, is a Berlin-based DJ, who has been exploring the fields of music for the
-            past 20
-            years. What started out as a computer-based live act has now morphed into a dancefloor-focused hybrid
-            live/DJ
-            performance, yet reserves the freedom to experiment.
-            <br>
-
-            With two albums under his belt, Acid Pauli never ceases to amaze with his ability to create amazing sounds
-            for his
-            audience. His music not only incorporates techno and house, but a wide variety of music across genres beyond
-            dance
-            music.
-            <br>
-
-            Acid Pauli will play Friday 25 August 2023.
-        </p>
-
-        <a href="###">Back to artists</a>
-    </div>
-
-</body>
-
-</html>
+  <a href={`artists/${data.slug}`}>Read more </a>
+</article>
 
 <style>
-    .artist_details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 600px; /* Juster maksimal bredden efter behov */
-  margin: 0 auto; /* Centerer containeren vandret */
-  padding: 20px;
-  border: 3px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+  .artist_card {
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    margin-right: 50px;
+    margin-left: 165px;
+    width: 100%;
+  }
 
-.artist_details img {
-    width: 50%;
-    margin-bottom: 2rem;
-    box-shadow:0 10px 10px rgba(0, 0, 0, 0.1);
-}
+  .artist_card img {
+    max-width: 100%;
+  }
+
+  .artist_card a {
+    font-family: "Montserrat", sans-serif;
+    color: #c7ffb9;
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-left: 33%;
+  }
 </style>

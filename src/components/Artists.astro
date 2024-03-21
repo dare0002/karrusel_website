@@ -1,11 +1,12 @@
 ---
-const {data}= Astro.props;
+const { data } = Astro.props;
 console.log(data);
-
 ---
 
-<article>
-<h2>{data.name} </h2>
-<p></p>
-<p></p>
-</article>
+<a href={´artists/${data.slug}´}>
+ 
+  <h2> {data.name}</h2>
+  <img src={`/img/${data.image}`} alt={`Image of ${data.name}`} />
+  <p> {data.description}</p>
+ 
+</a>
