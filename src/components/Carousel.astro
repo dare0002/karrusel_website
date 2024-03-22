@@ -1,0 +1,197 @@
+---
+---
+
+
+<div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <img src="img/karrusel_1.jpg" alt="1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_2.jpg" alt="2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_3.jpg" alt="3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_4.jpg" alt="4">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_5.jpg" alt="5">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_6.jpg" alt="6">
+                </div>
+				<div class="carousel-slide">
+                    <img src="img/karrusel_7.jpg" alt="7">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_8.jpg" alt="8">
+                </div>
+				<div class="carousel-slide">
+                    <img src="img/karrusel_9.jpg" alt="9">
+                </div>
+                <div class="carousel-slide">
+                    <img src="img/karrusel_10.jpg" alt="10">
+                </div>
+            </div>
+            <button class="custom-btn prev-btn">
+                <span class="arrow">&#8592;</span>
+            </button>
+            <button class="custom-btn next-btn">
+                <span class="arrow">&#8594;</span>
+            </button>
+        </div> <br>
+
+<style>
+
+.carousel-container {
+  position: absolute;
+  top: 120%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 70%;
+  margin: 0 auto;
+  overflow: hidden;
+  /* margin-bottom: 80px; */
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 10px;
+}
+
+.carousel-slide {
+  width: 50%; 
+  flex: 0 0 auto; 
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-slide img {
+  width: 100%; 
+  height: auto; 
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.custom-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+  background-color: #FFF3ED;
+  color: #430708;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.next-btn {
+  right: 10px;
+  background-color: #FFF3ED;
+  color: #430708;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.arrow {
+  font-size: 13px;
+}
+
+@media screen and (max-width: 1080px) {
+
+.carousel-container {
+  position: absolute;
+  top: 80%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+}
+
+@media screen and (max-width: 800px) {
+
+.carousel-container {
+  position: absolute;
+  top: 60%; 
+  left: 50%;
+  transform: translateX(-50%); 
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+<script>
+
+// Carousel
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carousel-track");
+  const slides = document.querySelectorAll(".carousel-slide");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const slideWidth = slides[0].offsetWidth;
+  const visibleSlides = 2; // Antal synlige billeder
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const newTransformValue = -currentIndex * slideWidth + "px";
+    track.style.transform = "translateX(" + newTransformValue + ")";
+  }
+
+  function nextSlide() {
+    currentIndex++;
+    track.style.transition = "transform 0.5s ease-in-out";
+    updateCarousel();
+
+    if (currentIndex >= slides.length - visibleSlides + 1) {
+      // Når vi nærmer os slutningen, gå tilbage til starten uden animation
+      currentIndex = 0;
+      track.style.transition = "none";
+      updateCarousel();
+    }
+  }
+
+  function prevSlide() {
+    currentIndex--;
+    track.style.transition = "transform 0.5s ease-in-out";
+    updateCarousel();
+
+    if (currentIndex < 0) {
+      // Når vi går baglæns forbi det første billede, gå tilbage til slutningen uden animation
+      currentIndex = slides.length - 1;
+      track.style.transition = "none";
+      updateCarousel();
+    }
+  }
+
+  nextBtn.addEventListener("click", nextSlide);
+  prevBtn.addEventListener("click", prevSlide);
+});
+
+</script>
